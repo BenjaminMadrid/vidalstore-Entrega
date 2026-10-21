@@ -1,0 +1,33 @@
+# ===================================================
+# CONFIGURACIÓN DE INFRAESTRUCTURA Y ENTORNOS (EP1 + EP2)
+# Proyecto: VidalStore - Cloud Native / Microservicios
+# ===================================================
+
+# --- INFRAESTRUCTURA DE CONTENEDORES (DOCKER - EP2) ---
+# Base de Datos PostgreSQL
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=postgres
+DB_PASSWORD=password123
+DB_NAME=vidalstore_db
+
+# Gestor de Mensajería RabbitMQ (Event-Driven Architecture)
+RABBITMQ_HOST=localhost
+RABBITMQ_PORT=5672
+RABBITMQ_MANAGEMENT_PORT=15672
+RABBITMQ_USER=guest
+RABBITMQ_PASSWORD=guest
+RABBITMQ_URL=amqp://guest:guest@localhost:5672
+
+# --- PUERTOS DE SERVICIOS Y MICROSERVICIOS (EP1) ---
+API_GATEWAY_PORT=8080
+BFF_PORT=3000
+MS_CATALOGO_PORT=3001
+MS_LICENCIAS_PORT=3002
+FRONTEND_PORT=4200
+
+# --- SEGURIDAD Y AUTENTICACIÓN (AWS COGNITO - EP1) ---
+AWS_REGION=us-east-1
+COGNITO_USER_POOL_ID=us-east-1_xxxxxxxxx
+COGNITO_CLIENT_ID=xxxxxxxxxxxxxxxxxxxxxxxxxx
+COGNITO_JWKS_URI=https://cognito-idp.us-east-1.amazonaws.com/us-east-1_xxxxxxxxx/.well-known/jwks.json

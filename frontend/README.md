@@ -1,0 +1,2 @@
+# VidalStore Frontend (Angular)
+Aplicación cliente desarrollada con Angular y AWS Amplify para la autenticación de usuarios mediante Cognito (grupos: jugadores, editores, administradores) y consumo de la API a través del Gateway.

@@ -1,0 +1,11 @@
+{
+  "name": "vidalstore-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "echo 'Frontend Angular preparado para la presentación'"
+  },
+  "dependencies": {
+    "@angular/core": "^17.0.0"
+  }
+}

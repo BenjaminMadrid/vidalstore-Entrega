@@ -1,0 +1,54 @@
+===================================================
+GUÍA DE EJECUCIÓN Y DEMOSTRACIÓN - VIDALSTORE (EP1 + EP2)
+===================================================
+
+PASO 1: LEVANTAR INFRAESTRUCTURA DE CONTENEDORES (EP2)
+---------------------------------------------------
+1. Abrir Docker Desktop y verificar que esté en verde.
+2. Abrir terminal en la raíz del proyecto.
+3. Ejecutar el comando de Docker Compose:
+   docker compose up -d
+
+4. Verificar que PostgreSQL y RabbitMQ estén corriendo:
+   docker ps
+
+5.revisar base de datos con PostgreSQL dentro de nuestro contenedor: docker exec -it vidalstore_postgres psql -U postgres -d vidalstore_db
+
+6.para listar las bases de datos: \l y para salir: \q
+
+
+
+PASO 2: VERIFICAR SERVICIOS DE INFRAESTRUCTURA EN NAVEGADOR
+---------------------------------------------------
+- Panel Web de RabbitMQ: http://localhost:15672
+  Credentials: User = guest | Password = guest
+- Base de Datos PostgreSQL: localhost:5432 (Base: vidalstore_db)
+
+
+PASO 3: EJECUTAR SERVICIOS BACKEND EN TERMINALES SEPARADAS (EP1)
+---------------------------------------------------
+Abrir 4 ventanas/pestañas de PowerShell y ejecutar:
+
+1. API Gateway (Puerto 8080):
+   cd C:\Users\benja\Desktop\vidalstore-entrega\api-gateway
+   node src/main.js
+
+2. BFF - Backend For Frontend (Puerto 3000):
+   cd C:\Users\benja\Desktop\vidalstore-entrega\bff
+   node src/main.js
+
+3. Microservicio Catálogo (Puerto 3001):
+   cd C:\Users\benja\Desktop\vidalstore-entrega\ms-catalogo
+   node src/main.js
+
+4. Microservicio Licencias (Puerto 3002):
+   cd C:\Users\benja\Desktop\vidalstore-entrega\ms-licencias
+   node src/main.js
+
+
+PASO 4: PRUEBAS Y ENDPOINTS ACTIVOS
+---------------------------------------------------
+- API Gateway (Punto de entrada): http://localhost:8080
+- BFF Aggregator:                 http://localhost:3000
+- MS Catálogo de Juegos:          http://localhost:3001/v1/catalogo
+- MS Licencias y Biblioteca:      http://localhost:3002/v1/biblioteca
