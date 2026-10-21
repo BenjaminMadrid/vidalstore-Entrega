@@ -1,0 +1,20 @@
+
+FROM node:18-alpine
+
+# Creamos y nos movemos al directorio de trabajo dentro del contenedor
+WORKDIR /app
+
+# Copiamos el package.json primero para aprovechar la caché de Docker
+COPY package*.json ./
+
+# Instalamos las dependencias automáticamente dentro del contenedor 
+RUN npm install
+
+# Copiamos el resto del código fuente (la carpeta src, etc.)
+COPY . .
+
+
+EXPOSE 3001
+
+# Comando para iniciar la aplicación
+CMD ["npm", "start"]
